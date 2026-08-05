@@ -1,0 +1,371 @@
+/* ==========================================
+   RESET
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+
+    --bg:#0f172a;
+    --surface:#1e293b;
+    --surface-hover:#263548;
+    --border:#334155;
+
+    --primary:#3b82f6;
+    --success:#22c55e;
+
+    --text:#f8fafc;
+    --text-secondary:#cbd5e1;
+
+}
+
+/* ==========================================
+   BODY
+========================================== */
+
+body{
+
+    font-family:"Inter",sans-serif;
+
+    background:linear-gradient(
+        135deg,
+        #020617 0%,
+        #0f172a 55%,
+        #172554 100%
+    );
+
+    color:var(--text);
+
+    min-height:100vh;
+
+    padding:40px;
+
+}
+
+/* ==========================================
+   BAKGRUND
+========================================== */
+
+.background{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    background:
+
+    radial-gradient(circle at top right,
+    rgba(59,130,246,.12),
+    transparent 35%),
+
+    radial-gradient(circle at bottom left,
+    rgba(96,165,250,.08),
+    transparent 40%);
+
+}
+
+/* ==========================================
+   DASHBOARD
+========================================== */
+
+.dashboard{
+
+    max-width:1400px;
+
+    margin:auto;
+
+    position:relative;
+
+    z-index:1;
+
+}
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:40px;
+
+}
+
+.title h1{
+
+    font-size:42px;
+
+    font-weight:700;
+
+    letter-spacing:-1px;
+
+}
+
+.title p{
+
+    margin-top:10px;
+
+    font-size:17px;
+
+    color:var(--text-secondary);
+
+}
+
+/* ==========================================
+   DROPDOWN
+========================================== */
+
+select{
+
+    background:var(--surface);
+
+    color:var(--text);
+
+    border:1px solid var(--border);
+
+    border-radius:14px;
+
+    padding:14px 20px;
+
+    font-size:16px;
+
+    font-weight:500;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+select:hover{
+
+    border-color:var(--primary);
+
+}
+
+select:focus{
+
+    outline:none;
+
+    border-color:var(--primary);
+
+    box-shadow:0 0 0 4px rgba(59,130,246,.20);
+
+}
+
+/* ==========================================
+   KORT
+========================================== */
+
+.chart-card{
+
+    background:rgba(30,41,59,.88);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:20px;
+
+    padding:35px;
+
+    box-shadow:
+
+    0 20px 40px rgba(0,0,0,.35);
+
+}
+
+/* ==========================================
+   HEADER I KORTET
+========================================== */
+
+.chart-top{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:30px;
+
+}
+
+.chart-top h2{
+
+    font-size:30px;
+
+    font-weight:700;
+
+}
+
+.chart-top span{
+
+    display:block;
+
+    margin-top:6px;
+
+    color:var(--text-secondary);
+
+    font-size:15px;
+
+}
+
+/* ==========================================
+   LIVE
+========================================== */
+
+.status{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    font-size:15px;
+
+    color:var(--success);
+
+    font-weight:600;
+
+}
+
+.dot{
+
+    width:10px;
+
+    height:10px;
+
+    border-radius:50%;
+
+    background:var(--success);
+
+    animation:pulse 2s infinite;
+
+}
+
+@keyframes pulse{
+
+    0%{
+
+        transform:scale(.8);
+
+        opacity:.5;
+
+    }
+
+    50%{
+
+        transform:scale(1.4);
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:scale(.8);
+
+        opacity:.5;
+
+    }
+
+}
+
+/* ==========================================
+   DIAGRAM
+========================================== */
+
+.chart-container{
+
+    width:100%;
+
+    height:560px;
+
+}
+
+canvas{
+
+    width:100%!important;
+
+    height:100%!important;
+
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:900px){
+
+.header{
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    gap:20px;
+
+}
+
+.chart-container{
+
+    height:420px;
+
+}
+
+}
+
+@media(max-width:600px){
+
+body{
+
+    padding:20px;
+
+}
+
+.title h1{
+
+    font-size:32px;
+
+}
+
+.chart-card{
+
+    padding:22px;
+
+}
+
+.chart-top{
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    gap:15px;
+
+}
+
+.chart-container{
+
+    height:320px;
+
+}
+
+select{
+
+    width:100%;
+
+}
+
+}
